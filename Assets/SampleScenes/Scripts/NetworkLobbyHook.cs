@@ -36,7 +36,7 @@ public class NetworkLobbyHook : LobbyHook
                 //player.RpcInit(player.playerID, player.playerCount);
             }
         }
-        Invoke("ReAssignId", 0.5f);
+        Invoke("ReAssignId", 0.2f);
     }
 
     private void ReAssignId()

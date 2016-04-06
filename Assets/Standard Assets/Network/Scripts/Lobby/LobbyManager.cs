@@ -325,7 +325,7 @@ namespace UnityStandardAssets.Network
                     p.ToggleJoinButton(numPlayers >= minPlayers);
                 }
             }
-            Invoke("ReassignClientId", 0.5f);
+            Invoke("ReassignClientId", 0.2f);
         }
 
         private void ReassignClientId()
