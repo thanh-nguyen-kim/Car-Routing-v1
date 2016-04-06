@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System;
+using Assets.Scripts.Network;
 namespace Assets.Scripts
 {
     public enum GameStates
@@ -22,6 +23,9 @@ namespace Assets.Scripts
         public GameObject CarPrefab;
         public GameObject[] spawnPoints;
         public List<GameObject> cars = new List<GameObject>();
+        public GameObject currentCam = null;
+        public PlayerData playerData = null;
+
         public static GameController Instance
         {
             get
@@ -75,13 +79,27 @@ namespace Assets.Scripts
         [Client]
         public void Init(int id,int playerCount)
         {
+            Debug.Log(playerData.playerID + " " + id);
+            if (playerData.playerID != id)
+            {
+                return;
+            }
+            if (currentCam != null)
+            {
+                Destroy(currentCam);
+                currentCam = null;
+            }
             GameState = GameStates.Stanby;
             Instance.id = id;
             clientCount = playerCount;
             if (Instance.id != 0)
+            {
                 GetComponent<CameraController>().SetClientCamera();
+            }
             else
+            {
                 GetComponent<CameraController>().CameraViewportControl();
+            }
         }
 
         void OnApplicationQuit()

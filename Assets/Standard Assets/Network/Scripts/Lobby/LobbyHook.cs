@@ -11,8 +11,7 @@ namespace UnityStandardAssets.Network
     public abstract class LobbyHook : MonoBehaviour
     {
         public virtual void OnLobbyServerSceneLoadedForPlayer(NetworkManager manager, GameObject lobbyPlayer, GameObject gamePlayer) { }
-        public virtual void OnLobbyClientExit() { }
-        public virtual void OnLobbyClientSceneChanged() { }
+        public virtual void OnOtherClientDisconnect() { }
     }
 
 }

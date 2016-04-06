@@ -9,6 +9,7 @@ namespace Assets.Scripts.Network
         public int playerID = -1;
         [SyncVar]
         public int playerCount = 0;
+
         public int PlayerID
         {
             get
@@ -18,25 +19,32 @@ namespace Assets.Scripts.Network
 
             set
             {
+                //int tmp = playerID;
                 this.playerID = value;
-                //if(isServer)
-                //Debug.Log(isLocalPlayer + " " + isServer + " " + isClient);
-                //GameController.Instance.InitCamera(playerID);
+                //if(tmp!=-1) 
             }
         }
 
         public override void OnStartLocalPlayer()
         {
             base.OnStartLocalPlayer();
+            //gameObject.transform.parent=
             Invoke("Init", 1f);
         }
 
-        private void Init()
+        public void Init()
         {
-            GameController.Instance.Init(playerID, playerCount);
-            //Debug.Log(isLocalPlayer + " " + isServer + " " + isClient);
-            //Debug.Log(playerID);
-            //GameController.Instance.InitCamera(playerID);
+            GameController.Instance.playerData = this;
+            if (isLocalPlayer)
+                GameController.Instance.Init(playerID, playerCount);
+        }
+
+        [ClientRpc]
+        public void RpcInit(int _playerID,int _playerCount)
+        {
+            //Debug.Log(_playerID != playerID+playerID+_playerID);
+            //if (_playerID != playerID) return;
+            GameController.Instance.Init(_playerID, _playerCount);
         }
     }
 }

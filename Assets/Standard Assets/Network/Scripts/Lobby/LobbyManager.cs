@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.Networking.Types;
 using UnityEngine.Networking.Match;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace UnityStandardAssets.Network
 {
@@ -24,6 +25,7 @@ namespace UnityStandardAssets.Network
         [Header("UI Reference")]
         public LobbyTopPanel topPanel;
 
+        public List<GameObject> playersNetwork = new List<GameObject>();
         public RectTransform mainMenuPanel;
         public RectTransform lobbyPanel;
 
@@ -42,7 +44,8 @@ namespace UnityStandardAssets.Network
         //of players, so that even client know how many player there is.
         [HideInInspector]
         public int _playerNumber = 0;
-
+   
+        public int disconnectedClientId = -1;
         //used to disconnect a client properly when exiting the matchmaker
         [HideInInspector]
         public bool _isMatchmaking = false;
@@ -52,7 +55,7 @@ namespace UnityStandardAssets.Network
         protected ulong _currentMatchID;
 
         protected LobbyHook _lobbyHooks;
-
+        
         void Start()
         {
             s_Singleton = this;
@@ -310,17 +313,24 @@ namespace UnityStandardAssets.Network
 
         public override void OnLobbyServerDisconnect(NetworkConnection conn)
         {
+            //Debug.Log("A client disconnect "+disconnectedClientId);
+            
+            //todo: tell all client that one of them has been disconnect.
             for (int i = 0; i < lobbySlots.Length; ++i)
             {
                 LobbyPlayer p = lobbySlots[i] as LobbyPlayer;
-
                 if (p != null)
                 {
                     p.RpcUpdateRemoveButton();
                     p.ToggleJoinButton(numPlayers >= minPlayers);
                 }
             }
+            Invoke("ReassignClientId", 0.5f);
+        }
 
+        private void ReassignClientId()
+        {
+            _lobbyHooks.OnOtherClientDisconnect();
         }
 
         public override bool OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayer, GameObject gamePlayer)

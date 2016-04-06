@@ -20,6 +20,11 @@ namespace Assets.Scripts
             if (GameController.Instance.id == 0)
             {
                 //todo: instance camera.
+                for(int i = 0; i < cameras.Count; i++)
+                {
+                    Destroy(cameras[i]);
+                }
+
                 GameObject go = Instantiate(cameraPrefab) as GameObject;
                 go.transform.position = CameraPosition(0);
                 go.transform.rotation = Quaternion.Euler(90, 0, 0);
@@ -33,6 +38,7 @@ namespace Assets.Scripts
                     go.transform.position = CameraPosition(i + 1);
                     go.transform.rotation = Quaternion.Euler(90, 0, 0);
                     go.GetComponent<Camera>().orthographicSize = GetCamSize();
+                    //todo: camera in host
                     go.GetComponent<Camera>().rect = GetCameraViewPort(i);
                     go.GetComponent<Camera>().depth = 1;
                     cameras.Add(go);
@@ -45,7 +51,6 @@ namespace Assets.Scripts
         //todo: handle camera display in client machine.
         public void SetClientCamera()
         {
-            Debug.Log("Set");
             GameObject go = Instantiate(cameraPrefab) as GameObject;
             go.transform.rotation = Quaternion.Euler(90, 0, 0);
             Vector3 tmp = CameraPosition(GameController.Instance.id);
@@ -54,7 +59,8 @@ namespace Assets.Scripts
             go.GetComponent<Camera>().rect = ClientCameraViewPort();
             Camera.main.depth = 0;
             go.GetComponent<Camera>().depth = 1;
-            cameras.Add(go);
+            //cameras.Add(go);
+            GameController.Instance.currentCam = go;
             //NetworkServer.Spawn(go);
         }
 
@@ -93,7 +99,6 @@ namespace Assets.Scripts
                     break;
             }
             float scaleHeight = clientScreenAspect / targetAspect;
-            //Debug.Log(clientScreenAspect);
             Rect rect = new Rect();
             if (scaleHeight < 1)
             {
@@ -109,7 +114,6 @@ namespace Assets.Scripts
                 rect.x = (1 - 1 / scaleHeight) / 2f;
                 rect.y = 0;
             }
-            //Debug.Log(rect);
             return rect;
         }
 
