@@ -28,7 +28,6 @@ namespace Assets.Scripts.Network
         public override void OnStartLocalPlayer()
         {
             base.OnStartLocalPlayer();
-            //gameObject.transform.parent=
             Invoke("Init", 1f);
         }
 

@@ -79,7 +79,7 @@ namespace Assets.Scripts
         [Client]
         public void Init(int id,int playerCount)
         {
-            Debug.Log(playerData.playerID + " " + id);
+            //Debug.Log(playerData.playerID + " " + id);
             if (playerData.playerID != id)
             {
                 return;

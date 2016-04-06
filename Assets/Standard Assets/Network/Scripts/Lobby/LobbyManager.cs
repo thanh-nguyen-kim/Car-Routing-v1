@@ -26,6 +26,7 @@ namespace UnityStandardAssets.Network
         public LobbyTopPanel topPanel;
 
         public List<GameObject> playersNetwork = new List<GameObject>();
+        public GameObject[] CarInfos;
         public RectTransform mainMenuPanel;
         public RectTransform lobbyPanel;
 
@@ -36,6 +37,7 @@ namespace UnityStandardAssets.Network
         protected RectTransform currentPanel;
 
         public Button backButton;
+        public Button settingButton;
 
         public Text statusInfo;
         public Text hostInfo;
@@ -63,6 +65,7 @@ namespace UnityStandardAssets.Network
             currentPanel = mainMenuPanel;
 
             backButton.gameObject.SetActive(false);
+            settingButton.gameObject.SetActive(false);
             GetComponent<Canvas>().enabled = true;
 
             DontDestroyOnLoad(gameObject);
@@ -137,10 +140,12 @@ namespace UnityStandardAssets.Network
             if (currentPanel != mainMenuPanel)
             {
                 backButton.gameObject.SetActive(true);
+                settingButton.gameObject.SetActive(true);
             }
             else
             {
                 backButton.gameObject.SetActive(false);
+                settingButton.gameObject.SetActive(false);
                 SetServerInfo("Offline", "None");
                 _isMatchmaking = false;
             }
