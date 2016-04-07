@@ -6,10 +6,10 @@ namespace UnityStandardAssets.Network
     public class LobbyTopPanel : MonoBehaviour
     {
         public bool isInGame = false;
-
+        public bool isServer = false;
         protected bool isDisplayed = true;
         protected Image panelImage;
-        public GameObject CarPanel = null;
+        public GameObject CarPanel = null,clientBtn=null,carBtn=null;
 
         void Start()
         {
@@ -29,10 +29,12 @@ namespace UnityStandardAssets.Network
 
         }
 
-        public void ToggleCarPanel(bool visible) {
+        public void ToggleServerPanel(bool visible) {
             //panelImage.enabled = isDisplayed;
-//            if()
+            //            if()
+            isServer = true;
             CarPanel.SetActive(visible);
+            clientBtn.SetActive(visible);
             if (!visible) ToggleVisibility(false);
         }
 
@@ -43,7 +45,12 @@ namespace UnityStandardAssets.Network
             {
                 t.gameObject.SetActive(isDisplayed);
             }
-
+            if (!isServer)
+            {
+                CarPanel.SetActive(false);
+                clientBtn.SetActive(false);
+                carBtn.SetActive(false);
+            }
             if (panelImage != null)
             {
                 panelImage.enabled = isDisplayed;

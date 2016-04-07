@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using Assets.Scripts.Network;
+using UnityStandardAssets.Vehicles.Car;
 namespace Assets.Scripts
 {
     public enum GameStates
@@ -118,12 +119,13 @@ namespace Assets.Scripts
                 DestroyImmediate(gameObject);
         }
         #region Methods
-        public GameObject SpawnCar()
+        public GameObject SpawnCar(int speed)
         {
             carCount += 1;
             GameObject go = Instantiate(CarPrefab, spawnPoints[carCount].transform.position, Quaternion.identity) as GameObject;
             cars.Add(go);
             NetworkServer.Spawn(go);
+            go.GetComponent<CarController>().MaxSpeed = speed;
             return go;
         }
 

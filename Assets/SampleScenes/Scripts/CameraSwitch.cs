@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Assets.Scripts;
 public class CameraSwitch : MonoBehaviour
 {
     public GameObject[] objects;
@@ -15,9 +14,19 @@ public class CameraSwitch : MonoBehaviour
         text.text = objects[m_CurrentActiveObject].name;
     }
 
+    public void OrthorCam()
+    {
+        GameController.Instance.currentCam.SetActive(true);
+    }
+
+    public void PerpestiveCam()
+    {
+        GameController.Instance.currentCam.SetActive(false);
+    }
 
     public void NextCamera()
     {
+        objects[0] = GameController.Instance.currentCam;
         int nextactiveobject = m_CurrentActiveObject + 1 >= objects.Length ? 0 : m_CurrentActiveObject + 1;
 
         for (int i = 0; i < objects.Length; i++)

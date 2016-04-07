@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Car;
 namespace Assets.Scripts.Network
 {
     public class CarData : MonoBehaviour
@@ -12,7 +13,7 @@ namespace Assets.Scripts.Network
             velTextField = transform.GetChild(3).GetComponent<Text>();
             velTextField.text = this.velocity.ToString();
             if (car == null)
-                car = GameController.Instance.SpawnCar();
+                car = GameController.Instance.SpawnCar(this.velocity);
         }
 
         public void OnDisable()
@@ -30,12 +31,14 @@ namespace Assets.Scripts.Network
         {
             this.velocity += 5;
             velTextField.text = this.velocity.ToString();
+            car.GetComponent<CarController>().MaxSpeed = this.velocity;
         }
 
         public void DecreaseVel()
         {
             this.velocity -= 5;
             velTextField.text = this.velocity.ToString();
+            car.GetComponent<CarController>().MaxSpeed = this.velocity;
         }
     }
 }

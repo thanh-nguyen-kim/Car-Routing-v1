@@ -12,7 +12,7 @@ namespace Assets.Scripts.ShortScript
     {
         public GameObject CarPrefabs;
         public void StartTheCar() {
-            GameController.Instance.GameState = GameStates.Run;
+            //GameController.Instance.GameState = GameStates.Run;
         }
 
         public void CamSetUp()
@@ -26,7 +26,7 @@ namespace Assets.Scripts.ShortScript
             //Debug.Log("Spawn");
             //GameObject go=Instantiate(CarPrefabs, new Vector3(Random.Range(-50, 50), 10, Random.Range(-50, 50)), Quaternion.identity) as GameObject;
             //NetworkServer.Spawn(go);
-            GameController.Instance.SpawnCar();
+            //GameController.Instance.SpawnCar();
         }
     }
 }
