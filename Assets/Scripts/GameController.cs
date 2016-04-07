@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 using System;
 using Assets.Scripts.Network;
 using UnityStandardAssets.Vehicles.Car;
+using Assets.Scripts.WaypointsProcessing;
 namespace Assets.Scripts
 {
     public enum GameStates
@@ -23,6 +24,7 @@ namespace Assets.Scripts
         private int carCount = 0;
         public GameObject CarPrefab;
         public GameObject[] spawnPoints;
+        //[SyncVar]
         public List<GameObject> cars = new List<GameObject>();
         public GameObject currentCam = null;
         public PlayerData playerData = null;
@@ -125,6 +127,7 @@ namespace Assets.Scripts
             GameObject go = Instantiate(CarPrefab, spawnPoints[carCount].transform.position, Quaternion.identity) as GameObject;
             cars.Add(go);
             NetworkServer.Spawn(go);
+            go.GetComponent<WaypointsProgressHandle>().carId = carCount-1;
             go.GetComponent<CarController>().MaxSpeed = speed;
             return go;
         }

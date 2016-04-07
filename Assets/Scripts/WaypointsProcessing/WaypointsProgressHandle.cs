@@ -27,7 +27,8 @@ namespace Assets.Scripts.WaypointsProcessing
 
         [SerializeField]
         public List<GameObject> waypoints; // A reference to the waypoint-based route we should follow
-
+        [SyncVar]
+        public int carId = -1;
         public GameObject goalCheckPoint;
 
         public GameObject lastCheckpoint, nextCheckpoint;

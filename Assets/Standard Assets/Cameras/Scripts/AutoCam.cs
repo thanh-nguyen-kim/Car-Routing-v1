@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Cameras
 {
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
     public class AutoCam : PivotBasedCameraRig
     {
         [SerializeField] private float m_MoveSpeed = 3; // How fast the rig will move to keep up with target's position
@@ -23,6 +23,11 @@ namespace UnityStandardAssets.Cameras
         private float m_TurnSpeedVelocityChange; // The change in the turn speed velocity
         private Vector3 m_RollUp = Vector3.up;// The roll of the camera around the z axis ( generally this will always just be up )
 
+        new public Transform Target
+        {
+            get { return this.m_Target; }
+            set { this.m_Target = value; }
+        }
 
         protected override void FollowTarget(float deltaTime)
         {
