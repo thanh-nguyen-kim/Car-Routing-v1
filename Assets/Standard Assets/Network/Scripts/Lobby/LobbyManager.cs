@@ -107,7 +107,6 @@ namespace UnityStandardAssets.Network
                 {
                     ChangeTo(mainMenuPanel);
                 }
-
                 topPanel.ToggleVisibility(true);
                 topPanel.isInGame = false;
             }
@@ -119,7 +118,10 @@ namespace UnityStandardAssets.Network
 
                 //backDelegate = StopGameClbk;
                 topPanel.isInGame = true;
+                if(!NetworkServer.active)
                 topPanel.ToggleVisibility(false);
+                else
+                topPanel.ToggleCarPanel(true);
             }
         }
 

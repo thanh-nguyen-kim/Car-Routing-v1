@@ -118,18 +118,19 @@ namespace Assets.Scripts
                 DestroyImmediate(gameObject);
         }
         #region Methods
-        public void SpawnCar()
+        public GameObject SpawnCar()
         {
             carCount += 1;
             GameObject go = Instantiate(CarPrefab, spawnPoints[carCount].transform.position, Quaternion.identity) as GameObject;
             cars.Add(go);
             NetworkServer.Spawn(go);
+            return go;
         }
 
-        public void DespawnCar(int i)
+        public void DespawnCar(GameObject car)
         {
             carCount--;
-            GameObject car = cars[i];
+            //GameObject car = cars[i];
             cars.Remove(car);
             NetworkServer.Destroy(car);
         }

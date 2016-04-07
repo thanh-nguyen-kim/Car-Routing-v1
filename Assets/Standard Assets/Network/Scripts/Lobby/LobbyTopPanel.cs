@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 namespace UnityStandardAssets.Network
 {
@@ -10,6 +9,7 @@ namespace UnityStandardAssets.Network
 
         protected bool isDisplayed = true;
         protected Image panelImage;
+        public GameObject CarPanel = null;
 
         void Start()
         {
@@ -27,6 +27,13 @@ namespace UnityStandardAssets.Network
                 ToggleVisibility(!isDisplayed);
             }
 
+        }
+
+        public void ToggleCarPanel(bool visible) {
+            //panelImage.enabled = isDisplayed;
+//            if()
+            CarPanel.SetActive(visible);
+            if (!visible) ToggleVisibility(false);
         }
 
         public void ToggleVisibility(bool visible)

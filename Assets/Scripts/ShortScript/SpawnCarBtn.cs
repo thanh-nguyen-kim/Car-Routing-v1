@@ -15,9 +15,9 @@ namespace Assets.Scripts.ShortScript
             }
         }
 
-        public void SpawnCar()
+        public void StartCar()
         {
-
+            GameController.Instance.GameState = GameStates.Run;
         }
     }
 }
