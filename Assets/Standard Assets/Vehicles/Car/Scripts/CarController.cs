@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -16,7 +17,7 @@ namespace UnityStandardAssets.Vehicles.Car
         KPH
     }
 
-    public class CarController : MonoBehaviour
+    public class CarController : NetworkBehaviour
     {
         [SerializeField]
         private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
@@ -191,7 +192,7 @@ namespace UnityStandardAssets.Vehicles.Car
             GearChanging();
 
             AddDownForce();
-            CheckForWheelSpin();
+            RpcCheckForWheelSpin();
             TractionControl();
         }
 
@@ -292,7 +293,8 @@ namespace UnityStandardAssets.Vehicles.Car
         // 2) plays tiure skidding sounds
         // 3) leaves skidmarks on the ground
         // these effects are controlled through the WheelEffects class
-        private void CheckForWheelSpin()
+        [ClientRpc]
+        private void RpcCheckForWheelSpin()
         {
             // loop through all wheels
             for (int i = 0; i < 4; i++)
@@ -325,6 +327,7 @@ namespace UnityStandardAssets.Vehicles.Car
         }
 
         // crude traction control that reduces the power to wheel if the car is wheel spinning too much
+        //[ClientRpc]
         private void TractionControl()
         {
             WheelHit wheelHit;

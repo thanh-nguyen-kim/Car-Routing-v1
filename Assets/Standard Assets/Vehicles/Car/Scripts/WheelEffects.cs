@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
     [RequireComponent(typeof (AudioSource))]
-    public class WheelEffects : MonoBehaviour
+    public class WheelEffects : NetworkBehaviour
     {
         public Transform SkidTrailPrefab;
         public static Transform skidTrailsDetachedParent;
@@ -41,7 +42,7 @@ namespace UnityStandardAssets.Vehicles.Car
             }
         }
 
-
+        //[ClientRpc]
         public void EmitTyreSmoke()
         {
             skidParticles.transform.position = transform.position - transform.up*m_WheelCollider.radius;
@@ -52,7 +53,7 @@ namespace UnityStandardAssets.Vehicles.Car
             }
         }
 
-
+        //[ClientRpc]
         public void PlayAudio()
         {
             m_AudioSource.Play();

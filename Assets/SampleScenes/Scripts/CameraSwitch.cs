@@ -3,10 +3,12 @@ using UnityEngine.UI;
 using Assets.Scripts;
 using Assets.Scripts.WaypointsProcessing;
 using UnityStandardAssets.Cameras;
-public class CameraSwitch : MonoBehaviour
+using UnityEngine.Networking;
+public class CameraSwitch : NetworkBehaviour
 {
     //public GameObject[] objects;
     public GameObject followCamera;
+    public Transform listCar;
     public Text text;
 
     private int m_CurrentActiveObject;
@@ -14,7 +16,7 @@ public class CameraSwitch : MonoBehaviour
 
     private void OnEnable()
     {
-        //text.text = objects[m_CurrentActiveObject].name;
+        if (NetworkServer.active) gameObject.SetActive(false);
     }
 
     public void OrthorCam()
@@ -29,7 +31,6 @@ public class CameraSwitch : MonoBehaviour
 
     public void FollowCam(int i) {
         followCamera.GetComponent<AutoCam>().Target = FindCar(i);
-        Debug.Log(i);
         if (followCamera.GetComponent<AutoCam>().Target == null) return;
         GameController.Instance.currentCam.SetActive(false);
         followCamera.SetActive(true);
@@ -43,6 +44,21 @@ public class CameraSwitch : MonoBehaviour
             if (go.GetComponent<WaypointsProgressHandle>().carId == i) return go.transform;
         }
         return null;
+    }
+
+    public void ListCarManager()
+    {
+        GameObject[] cars = GameObject.FindGameObjectsWithTag("Player");
+        int i = -1;
+        for (int j = 0; j < listCar.childCount; j++) {
+            listCar.GetChild(j).gameObject.SetActive(false);
+        }
+        foreach (GameObject go in cars)
+        {
+            i = go.GetComponent<WaypointsProgressHandle>().carId;
+            listCar.GetChild(i).gameObject.SetActive(true);
+        }
+        if (i == -1) listCar.gameObject.SetActive(false);
     }
     //public void NextCamera()
     //{
