@@ -9,8 +9,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: 2013_10 - Sample Assets
+  companyName: Hari Studio
+  productName: Street Polish
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -98,7 +98,7 @@ PlayerSettings:
   virtualRealitySupported: 0
   productGUID: 0086036c33305704294abb2f69fd081d
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 16
+  AndroidMinSdkVersion: 15
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   apiCompatibilityLevel: 2
@@ -173,7 +173,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: e699b101eff90aa40a618e81d3aeaf03, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching:

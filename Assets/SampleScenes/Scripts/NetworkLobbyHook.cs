@@ -33,6 +33,7 @@ public class NetworkLobbyHook : LobbyHook
                 }
                 //Debug.Log(player.PlayerID);
                 player.playerCount--;
+                GameController.Instance.GameState = GameStates.Run;
                 //player.RpcInit(player.playerID, player.playerCount);
             }
         }

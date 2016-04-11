@@ -93,7 +93,16 @@ namespace Assets.Scripts.WaypointsProcessing
         private Vector3 lastPosition; // Used to calculate current speed (since we may not have a rigidbody component)
         private float speed; // current speed of this object (calculated from delta since last frame)
         private bool canRun = false;
+
+        void OnDestroy()
+        {
+            if (currentStreet != null)
+                currentStreet.cars.Remove(gameObject);
+        }
+
         // setup script properties
+
+
         private void OnEnable()
         {
             // we use a transform to represent the point to aim for, and the point which
@@ -121,7 +130,7 @@ namespace Assets.Scripts.WaypointsProcessing
         {
             //Init();
             //Debug.Log("Local player: " + isLocalPlayer);
-            if (!isLocalPlayer)
+            if (!isLocalPlayer&&NetworkServer.active)
             {
                 if (GameController.Instance.GameState == GameStates.Run)
                 {
@@ -147,6 +156,7 @@ namespace Assets.Scripts.WaypointsProcessing
                 nextCheckpoint = Map.Instance.GetNearestCheckpoint(gameObject);
                 target.position = nextCheckpoint.transform.position;
             }
+            StartCar();
         }
 
         // reset the object to sensible values

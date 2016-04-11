@@ -293,7 +293,7 @@ namespace UnityStandardAssets.Vehicles.Car
         // 2) plays tiure skidding sounds
         // 3) leaves skidmarks on the ground
         // these effects are controlled through the WheelEffects class
-        [ClientRpc]
+        
         private void RpcCheckForWheelSpin()
         {
             // loop through all wheels

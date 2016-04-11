@@ -22,7 +22,7 @@ namespace Assets.Scripts
         public int id = -1;
         public int clientCount = 0;
         private int carCount = 0;
-        public GameObject CarPrefab;
+        public GameObject[] CarPrefabs;
         public GameObject[] spawnPoints;
         //[SyncVar]
         public List<GameObject> cars = new List<GameObject>();
@@ -115,16 +115,16 @@ namespace Assets.Scripts
             if (instance == null)
             {
                 instance = this;
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
             }
             else
                 DestroyImmediate(gameObject);
         }
         #region Methods
-        public GameObject SpawnCar(int speed)
+        public GameObject SpawnCar(int speed,int color)
         {
             carCount += 1;
-            GameObject go = Instantiate(CarPrefab, spawnPoints[carCount].transform.position, Quaternion.identity) as GameObject;
+            GameObject go = Instantiate(CarPrefabs[color], spawnPoints[carCount-1].transform.position, spawnPoints[carCount - 1].transform.rotation) as GameObject;
             cars.Add(go);
             NetworkServer.Spawn(go);
             go.GetComponent<WaypointsProgressHandle>().carId = carCount-1;
@@ -135,7 +135,6 @@ namespace Assets.Scripts
         public void DespawnCar(GameObject car)
         {
             carCount--;
-            //GameObject car = cars[i];
             cars.Remove(car);
             NetworkServer.Destroy(car);
         }

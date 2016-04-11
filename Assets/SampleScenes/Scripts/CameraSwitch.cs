@@ -22,6 +22,7 @@ public class CameraSwitch : NetworkBehaviour
     public void OrthorCam()
     {
         GameController.Instance.currentCam.SetActive(true);
+        followCamera.SetActive(false);
     }
 
     public void PerpestiveCam()
