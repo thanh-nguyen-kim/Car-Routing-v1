@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 40
+  velocity: 30
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 40
+  velocity: 50
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -2541,7 +2541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 40
+  velocity: 20
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -4455,7 +4455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 40
+  velocity: 35
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -5677,7 +5677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 40
+  velocity: 25
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -6247,7 +6247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 40
+  velocity: 45
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}

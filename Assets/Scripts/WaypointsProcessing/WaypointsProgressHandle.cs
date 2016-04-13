@@ -136,6 +136,7 @@ namespace Assets.Scripts.WaypointsProcessing
                 {
                     canRun = true;
                     GetComponent<CarAIControl>().enabled = true;
+                    Debug.Log(GetComponent<CarAIControl>().enabled);
                 }
                 else {
                     canRun = false;
@@ -227,7 +228,6 @@ namespace Assets.Scripts.WaypointsProcessing
                         if (targetDelta.magnitude < pointToPointThreshold)
                         {
                             //need to check for red light in here.
-                            Debug.Log("close to checkpoint");
                             GameObject tmp;
                             if (nextCheckpoint.GetComponent<CheckPoint>().state)
                             {
@@ -241,6 +241,7 @@ namespace Assets.Scripts.WaypointsProcessing
                             }
                             if (tmp == null)
                             {
+                                //Debug.Log("stop");
                                 GetComponent<CarAIControl>().enabled = false;
                                 GetComponent<Rigidbody>().velocity = Vector3.zero;
                                 return;

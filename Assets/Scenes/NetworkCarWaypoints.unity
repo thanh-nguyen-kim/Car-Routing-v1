@@ -36,12 +36,12 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: a7bed68887a07e34394d4191b3081359, type: 3}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 802705335}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 2
   m_GISettings:
     serializedVersion: 2
@@ -66,7 +66,8 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000001, guid: 6801ed2d379847e47a40a49306f455db,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -188,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 23
 --- !u!4 &77221994
 Transform:
   m_ObjectHideFlags: 0
@@ -303,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 35
 --- !u!4 &113832226
 Transform:
   m_ObjectHideFlags: 0
@@ -414,7 +415,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 137959644}
   m_LocalRotation: {x: -0.008725995, y: -0.8658934, z: -0.015113858, w: 0.49992412}
-  m_LocalPosition: {x: -153, y: 3, z: -73}
+  m_LocalPosition: {x: -244, y: 6, z: -88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1414299222}
@@ -518,7 +519,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 155300308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 304, y: 0, z: 85}
+  m_LocalPosition: {x: 275, y: 0, z: 130}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 271243093}
@@ -617,90 +618,92 @@ MonoBehaviour:
   - {fileID: 2111824368}
   - {fileID: 557993221}
   - {fileID: 1768977349}
+  - {fileID: 1048020992}
+  - {fileID: 948967912}
   streets:
   - points:
-    - {fileID: 742948474}
     - {fileID: 1153379341}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 1153379341}
-    - {fileID: 1842161994}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 1842161994}
-    - {fileID: 723247925}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 723247925}
-    - {fileID: 1534491957}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 1534491957}
-    - {fileID: 470199229}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 470199229}
-    - {fileID: 2130701115}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 2130701115}
-    - {fileID: 2058627752}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 2058627752}
-    - {fileID: 937196768}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 937196768}
-    - {fileID: 1026273499}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 1026273499}
-    - {fileID: 155300308}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 155300308}
-    - {fileID: 327931350}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 327931350}
-    - {fileID: 1305011896}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 1305011896}
-    - {fileID: 1550648937}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 1550648937}
-    - {fileID: 178396741}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 178396741}
-    - {fileID: 1260562416}
-    cars: []
-    IsTwoWay: 1
-  - points:
-    - {fileID: 1260562416}
     - {fileID: 742948474}
     cars: []
-    IsTwoWay: 1
+    IsTwoWay: 0
   - points:
+    - {fileID: 1842161994}
     - {fileID: 1153379341}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 1048020992}
+    - {fileID: 1842161994}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 1534491957}
+    - {fileID: 723247925}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 470199229}
+    - {fileID: 1534491957}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 2130701115}
+    - {fileID: 470199229}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 2058627752}
+    - {fileID: 2130701115}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 937196768}
+    - {fileID: 2058627752}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 1026273499}
+    - {fileID: 937196768}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 948967912}
+    - {fileID: 1026273499}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 327931350}
+    - {fileID: 155300308}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 1305011896}
+    - {fileID: 327931350}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 1550648937}
+    - {fileID: 1305011896}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 178396741}
+    - {fileID: 1550648937}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 1260562416}
+    - {fileID: 178396741}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 742948474}
+    - {fileID: 1260562416}
+    cars: []
+    IsTwoWay: 0
+  - points:
     - {fileID: 1938573059}
+    - {fileID: 1153379341}
     cars: []
     IsTwoWay: 1
   - points:
@@ -759,8 +762,8 @@ MonoBehaviour:
     cars: []
     IsTwoWay: 1
   - points:
-    - {fileID: 470199229}
     - {fileID: 2111824368}
+    - {fileID: 470199229}
     cars: []
     IsTwoWay: 1
   - points:
@@ -793,6 +796,16 @@ MonoBehaviour:
     - {fileID: 1768977349}
     cars: []
     IsTwoWay: 1
+  - points:
+    - {fileID: 723247925}
+    - {fileID: 1048020992}
+    cars: []
+    IsTwoWay: 0
+  - points:
+    - {fileID: 155300308}
+    - {fileID: 948967912}
+    cars: []
+    IsTwoWay: 0
 --- !u!4 &271243093
 Transform:
   m_ObjectHideFlags: 0
@@ -827,6 +840,8 @@ Transform:
   - {fileID: 2111824370}
   - {fileID: 557993223}
   - {fileID: 1768977351}
+  - {fileID: 1048020994}
+  - {fileID: 948967914}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!1 &288929723
@@ -1006,7 +1021,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 200
+  orthographic size: 1
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1027,7 +1042,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 300921384}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1060,7 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 40
 --- !u!4 &327931352
 Transform:
   m_ObjectHideFlags: 0
@@ -1614,7 +1629,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint (5)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1876,7 +1891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 30
 --- !u!4 &557993223
 Transform:
   m_ObjectHideFlags: 0
@@ -2137,7 +2152,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2178,7 +2193,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2399,7 +2414,7 @@ Light:
   m_SpotAngle: 112
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_Strength: 0.6
     m_Bias: 0.2
@@ -2952,6 +2967,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 271243093}
   m_RootOrder: 8
+--- !u!1 &948967912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 948967914}
+  - 114: {fileID: 948967913}
+  m_Layer: 0
+  m_Name: CheckPoint (25)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &948967913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948967912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e966fbec264c13c4db5665ae67245864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
+  RedGreenCycle: 0
+--- !u!4 &948967914
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948967912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 301, y: 0, z: 80}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 271243093}
+  m_RootOrder: 25
 --- !u!1 &954760087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3262,6 +3318,47 @@ Transform:
   - {fileID: 288929727}
   m_Father: {fileID: 271243093}
   m_RootOrder: 9
+--- !u!1 &1048020992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1048020994}
+  - 114: {fileID: 1048020993}
+  m_Layer: 0
+  m_Name: CheckPoint (24)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1048020993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048020992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e966fbec264c13c4db5665ae67245864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
+  RedGreenCycle: 0
+--- !u!4 &1048020994
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048020992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -298, y: 0, z: -113}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 271243093}
+  m_RootOrder: 24
 --- !u!114 &1061103967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3452,7 +3549,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1089502233064743932, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3468,7 +3565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 20
+  RedGreenCycle: 40
 --- !u!4 &1153379343
 Transform:
   m_ObjectHideFlags: 0
@@ -3476,7 +3573,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1153379341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -287.5, y: 0, z: 47.6}
+  m_LocalPosition: {x: -290, y: 0, z: 48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 467215658}
@@ -3661,7 +3758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 40
 --- !u!4 &1260562418
 Transform:
   m_ObjectHideFlags: 0
@@ -4524,19 +4621,19 @@ MonoBehaviour:
   cameraPrefab: {fileID: 153456, guid: f42fa4a7171719e45b558485103ff97a, type: 2}
   cameras: []
   camOnePos:
-  - {x: 0, y: 10, z: 0}
-  - {x: -178, y: 10, z: 0}
-  - {x: -235, y: 10, z: 0}
-  - {x: -178, y: 10, z: -100}
+  - {x: 0, y: 20, z: 0}
+  - {x: -178, y: 20, z: 0}
+  - {x: -235, y: 20, z: 0}
+  - {x: -178, y: 20, z: -100}
   camTwoPos:
-  - {x: 178, y: 10, z: 0}
-  - {x: 0, y: 10, z: 0}
-  - {x: 178, y: 10, z: -100}
+  - {x: 178, y: 20, z: 0}
+  - {x: 0, y: 20, z: 0}
+  - {x: 178, y: 20, z: -100}
   cameThreePos:
-  - {x: 235, y: 10, z: 0}
-  - {x: -178, y: 10, z: 100}
+  - {x: 235, y: 20, z: 0}
+  - {x: -178, y: 20, z: 100}
   camFourPos:
-  - {x: 178, y: 10, z: 100}
+  - {x: 178, y: 20, z: 100}
   camFivePos: []
   camSixPos: []
 --- !u!1 &1532045829
@@ -4796,7 +4893,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4812,7 +4909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 30
+  RedGreenCycle: 40
 --- !u!4 &1534491959
 Transform:
   m_ObjectHideFlags: 0
@@ -5005,7 +5102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 30
 --- !u!4 &1599407760
 Transform:
   m_ObjectHideFlags: 0
@@ -5649,7 +5746,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5673,7 +5770,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1842161994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -303.2, y: 0, z: -91.1}
+  m_LocalPosition: {x: -299.9, y: 0, z: -91.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1319726540}
@@ -5815,7 +5912,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878615196}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2e605810dc6622a4590cdba728471374, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -5856,7 +5953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 10
 --- !u!4 &1938573061
 Transform:
   m_ObjectHideFlags: 0
@@ -6088,7 +6185,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint (7)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6104,7 +6201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 40
 --- !u!4 &2058627754
 Transform:
   m_ObjectHideFlags: 0
@@ -6146,7 +6243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  RedGreenCycle: 0
+  RedGreenCycle: 5
 --- !u!4 &2111824370
 Transform:
   m_ObjectHideFlags: 0
@@ -6323,7 +6420,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint (6)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

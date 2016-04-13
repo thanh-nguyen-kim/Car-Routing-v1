@@ -44,6 +44,7 @@ namespace Assets.Scripts.Network
             //Debug.Log(_playerID != playerID+playerID+_playerID);
             //if (_playerID != playerID) return;
             GameController.Instance.Init(_playerID, _playerCount);
+            GameController.Instance.GameState = GameStates.Run;
         }
     }
 }

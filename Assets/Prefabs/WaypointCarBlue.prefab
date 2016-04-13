@@ -1977,8 +1977,8 @@ MonoBehaviour:
   - {fileID: 11498880}
   - {fileID: 11424268}
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
-  m_MaximumSteerAngle: 75
-  m_SteerHelper: 0.774
+  m_MaximumSteerAngle: 90
+  m_SteerHelper: 1
   m_TractionControl: 1
   m_FullTorqueOverAllWheels: 2000
   m_ReverseTorque: 150
@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
-  m_MovementTheshold: 0.001
+  m_MovementTheshold: 0.01
   m_SnapThreshold: 20
   m_InterpolateRotation: 0
   m_InterpolateMovement: 1
@@ -2103,7 +2103,7 @@ MonoBehaviour:
   lookAheadForSpeedOffset: 10
   lookAheadForSpeedFactor: 0.2
   progressStyle: 2
-  pointToPointThreshold: 4
+  pointToPointThreshold: 10
   target: {fileID: 433962}
   progressNum: 0
 --- !u!114 &11498880
@@ -3749,6 +3749,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_InterpolateRotation
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_MaximumSteerAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SteerHelper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_MovementTheshold
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pointToPointThreshold
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -38,6 +38,7 @@ namespace Assets.Scripts.Network
         {
             this.velocity += 5;
             velTextField.text = this.velocity.ToString();
+            if(car!=null)
             car.GetComponent<CarController>().MaxSpeed = this.velocity;
         }
 
@@ -45,7 +46,8 @@ namespace Assets.Scripts.Network
         {
             this.velocity -= 5;
             velTextField.text = this.velocity.ToString();
-            car.GetComponent<CarController>().MaxSpeed = this.velocity;
+            if (car != null)
+                car.GetComponent<CarController>().MaxSpeed = this.velocity;
         }
 
         private void SetColor() {

@@ -278,7 +278,15 @@ namespace Assets.Scripts.Entity
                  }
             }
             if (targets.Count > 0)
+            {
+                //GameObject streetOnTheRight=
+                if (targets.Count > 1)
+                {
+                    GameObject checkpointOnTheRight = CheckPointOnTheRight(nextCheckpoint, lastCheckpoint);
+                    if (checkpointOnTheRight != null) targets.Remove(checkpointOnTheRight);
+                }
                 return targets[UnityEngine.Random.Range(0, targets.Count)];
+            }
             else
                 if (currentStreet.IsTwoWay) return currentStreet.OtherCheckPoint(currentStreet.points[checkPointIntersect]);
             return null;
@@ -308,7 +316,6 @@ namespace Assets.Scripts.Entity
 
             if (intersectStreet.Count == 0)
             {
-                Debug.Log("Not intersect");
                 return null;
             }
             else {
@@ -316,15 +323,10 @@ namespace Assets.Scripts.Entity
                 {
                     if (currentStreet.IsOnTheRight(street, checkPointIntersect))
                     {
-  //                      Debug.Log("Found one in the right");
                         return street.OtherCheckPoint(currentStreet.points[checkPointIntersect]);
                     }
-                    else
-                    {
-   //                     Debug.Log("Cant found one in the right");
-                        return null;
-                    }
                 }
+                Debug.Log("Cant found one in the right");
                 return null;
 
             }

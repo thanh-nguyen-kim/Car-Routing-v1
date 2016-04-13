@@ -17,7 +17,7 @@ namespace Assets.Scripts
     {
 
         private static GameController instance = null;
-        private GameStates gameState;
+        public GameStates gameState;
         private List<Action> gameStateChangeSubcriber = new List<Action>();
         public int id = -1;
         public int clientCount = 0;

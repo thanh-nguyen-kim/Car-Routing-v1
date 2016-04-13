@@ -8,11 +8,12 @@ namespace Assets.Scripts.Entity
     {
         public bool state = true;
         public int RedGreenCycle = 0;
+        private int Delay = 60;
 
         void Start()
         {
             if (RedGreenCycle > 0)
-                InvokeRepeating("ChangState", RedGreenCycle, RedGreenCycle);
+                Invoke("ChangState",RedGreenCycle);
         }
 
         private void ChangState()
@@ -23,12 +24,13 @@ namespace Assets.Scripts.Entity
                 if (state)
                 {
                     transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
+                    Invoke("ChangState", Delay);
                 }
                 else
                 {
                     transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
+                    Invoke("ChangState", RedGreenCycle);
                 }
-
             }
         }
 
