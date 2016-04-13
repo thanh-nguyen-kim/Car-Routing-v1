@@ -18,6 +18,18 @@ namespace Assets.Scripts.Entity
         private void ChangState()
         {
             state = !state;
+            if (transform.GetChild(0).gameObject != null)
+            {
+                if (state)
+                {
+                    transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
+                }
+                else
+                {
+                    transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
+                }
+
+            }
         }
 
         public bool Equals(CheckPoint obj)
