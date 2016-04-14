@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 30
+  velocity: 40
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 50
+  velocity: 55
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 40
+  velocity: 45
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -2541,7 +2541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 20
+  velocity: 30
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -4455,7 +4455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 35
+  velocity: 40
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -5677,7 +5677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 25
+  velocity: 35
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}
@@ -6107,7 +6107,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 56c4630952ccd9546aa30a1eddc073e8, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6247,7 +6247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3d5c487dea1374a97e87ebfbf7e54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 45
+  velocity: 50
   color: 0
   velTextField: {fileID: 0}
   car: {fileID: 0}

@@ -36,7 +36,7 @@ namespace Assets.Scripts.Network
 
         public void IncreaseVel()
         {
-            this.velocity += 5;
+            this.velocity = Mathf.Min(velocity+5,60);
             velTextField.text = this.velocity.ToString();
             if(car!=null)
             car.GetComponent<CarController>().MaxSpeed = this.velocity;
@@ -44,7 +44,7 @@ namespace Assets.Scripts.Network
 
         public void DecreaseVel()
         {
-            this.velocity -= 5;
+            this.velocity = Mathf.Max(30,velocity-5);
             velTextField.text = this.velocity.ToString();
             if (car != null)
                 car.GetComponent<CarController>().MaxSpeed = this.velocity;

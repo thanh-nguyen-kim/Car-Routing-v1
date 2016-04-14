@@ -127,10 +127,10 @@ namespace Assets.Scripts
                     if (cameraId == 0) return new Rect(0, 0, 0.5f, 1);
                     return new Rect(0.5f, 0, 0.5f, 1);
                 case 3:
-                    if (cameraId == 0) return new Rect(0, 0, 0.33f, 1);
+                    if (cameraId == 0) return new Rect(0, 0, 0.3333f, 1);
                     else
-                        if (cameraId == 1) return new Rect(0.33f, 0, 0.33f, 1);
-                    return new Rect(0.66f, 0, 0.33f, 1);
+                        if (cameraId == 1) return new Rect(0.3333f, 0, 0.3333f, 1);
+                    return new Rect(0.6666f, 0, 0.3333f, 1);
                 case 4:
                     if (cameraId == 0) return new Rect(0, 0, 0.5f, 0.5f);
                     else
@@ -150,17 +150,17 @@ namespace Assets.Scripts
                     else
                         return new Rect(0.8f, 0, 0.2f, 1);
                 case 6:
-                    if (cameraId == 0) return new Rect(0, 0, 0.33f, 0.5f);
+                    if (cameraId == 0) return new Rect(0, 0, 0.3333f, 0.5f);
                     else
-                         if (cameraId == 1) return new Rect(0.33f, 0, 0.33f, 0.5f);
+                         if (cameraId == 1) return new Rect(0.3333f, 0, 0.3333f, 0.5f);
                     else
-                         if (cameraId == 2) return new Rect(0.66f, 0, 0.33f, 0.5f);
+                         if (cameraId == 2) return new Rect(0.6666f, 0, 0.3333f, 0.5f);
                     else
                         if (cameraId == 3) return new Rect(0, 0.5f, 0.33f, 0.5f);
                     else
-                        if (cameraId == 4) return new Rect(0.33f, 0.5f, 0.33f, 0.5f);
+                        if (cameraId == 4) return new Rect(0.3333f, 0.5f, 0.3333f, 0.5f);
                     else
-                        return new Rect(0.66f, 0.5f, 0.33f, 0.5f);
+                        return new Rect(0.6666f, 0.5f, 0.3333f, 0.5f);
                 default: return new Rect(0, 0, 1, 1);
             }
         }
